@@ -1,0 +1,59 @@
+<a href="/">Home</a>
+>
+<a href="/login">Login</a>
+
+<h2><div>Login</div></h2>
+
+<div class="login">
+    <form class="login-form" method="post" action="{{{postUrl}}}">
+        {{#if (gt errors.length 0)}}
+            <div class="form-errors">
+                {{#each errors}}
+                    <div
+                        class="flash text-error background-error"
+                    >{{this.msg}}</div>
+                {{/each}}
+            </div>
+        {{/if}}
+        <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+
+        <div class="input-group">
+            <label for="username">Username:</label>
+            <div class="flex align-items-center">
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    autocomplete="off"
+                    minlength="3"
+                    maxlength="32"
+                    pattern="[a-zA-Z0-9_-]{3,32}"
+                    title="Username must use a-z, A-Z and 0-9"
+                    required
+                />
+                <span class="input-checkmark"></span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <div class="flex align-items-center">
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    autocomplete="off"
+                    minlength="6"
+                    maxlength="32"
+                    required
+                />
+                <span class="input-checkmark"></span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <input type="submit" value="Login" />
+        </div>
+
+    </form>
+</div>

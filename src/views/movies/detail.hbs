@@ -1,0 +1,70 @@
+{{#section "script"}}
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="/js/detail.js" type="module" defer></script>
+{{/section}}
+
+<a href="/">Home</a>
+/
+<a href="{{movie.url}}">{{movie.name}}</a>
+
+<h2><div><a href="{{movie.url}}">{{movie.name}}
+            <span class="movie-year">({{movie.year}})</span></a></div></h2>
+
+<div class="row">
+    <div class="col">
+        <img
+            class="movie-artwork"
+            width="400px"
+            height="600px"
+            src="/img/{{movie.artwork}}"
+        />
+    </div>
+
+    <div class="col movie-detail">
+        <div>
+            <ul class="movie-crew">
+                <li><b>Director:</b> {{movie.director}}</li>
+                <li><b>Writers:</b> {{movie.writers}}</li>
+                <li><b>Actors:</b> {{movie.actors}}</li>
+                <li><b>Release date:</b> {{movie.releaseDate}}</li>
+                <li><b>Running times:</b> {{movie.runningTimes}} minutes</li>
+            </ul>
+        </div>
+
+        <div class="movie-links">
+            {{#if movie.wikipediaUrl}}
+                <div class="movie-link">
+                    <a href="{{movie.wikipediaUrl}}">
+                        <img
+                            src="/img/wikipedia-icon.svg"
+                            width="32px"
+                            height="32px"
+                            alt="Wikipedia"
+                        />
+                    </a>
+                </div>
+            {{/if}}
+            {{#if movie.imdbUrl}}
+                <div class="movie-link">
+                    <a href="{{movie.imdbUrl}}">
+                        <img
+                            src="/img/imdb-icon.svg"
+                            width="32px"
+                            height="32px"
+                            alt="IMDb"
+                        />
+                    </a>
+                </div>
+            {{/if}}
+        </div>
+
+        <div class="movie-fav-button" v-cloak>
+            <button-favorite
+                movie-id="{{movie.id}}"
+                :favorite="{{favorite}}"
+            ></button-favorite>
+        </div>
+
+    </div>
+
+</div>

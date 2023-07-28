@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'main'
+
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Unit tests & check
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install npm & node
+        run: | 
+          sudo apt update
+          sudo apt install nodejs
+          echo "npm $(npm --version)"
+          echo "node $(node --version)"
+      - name: Install
+        run: bin/install.sh
+      - name: Check format and lint
+        run: bin/check.sh
+      - name: Unit tests
+        run: bin/unit.sh
+  docker-publish:
+    runs-on: ubuntu-latest
+    name: Publish Docker image
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build Docker image
+        run: bin/docker-build.sh
+  integration-test:
+    runs-on: ubuntu-latest
+    name: Integration tests
+    needs: docker-publish
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Hurl
+        run: |
+          curl -LO https://github.com/Orange-OpenSource/hurl/releases/download/4.0.0/hurl_4.0.0_amd64.deb
+          sudo dpkg -i hurl_4.0.0_amd64.deb
+          hurl --version
+      - name: Integration test
+        run: bin/integration.sh http://localhost:3000

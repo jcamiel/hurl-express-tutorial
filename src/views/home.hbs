@@ -1,0 +1,44 @@
+<div class="flex align-items-baseline">
+    <h2><div>Welcome!</div></h2>
+    <p class="home-welcome-text">
+        {{#if user}}Hello <b>{{user.name}}</b><br />{{/if}}
+        Discover all times best movies<br />
+        Find the best movie to watch next
+    </p>
+</div>
+
+<h3>Popular</h3>
+
+<div class="home-movies">
+    {{#each popularMovies}}
+        <div class="home-movie">
+            <a href="/movies/{{this.slug}}">
+                <img
+                    class="home-movie-image"
+                    width="200px"
+                    height="300px"
+                    src="/img/{{this.artwork}}"
+                    alt="{{this.name}} - {{this.director}}"
+                />
+            </a>
+        </div>
+    {{/each}}
+</div>
+
+<h3>Featured Today</h3>
+
+<div class="home-movies">
+    {{#each todayMovies}}
+        <div class="home-movie">
+            <a href="/movies/{{this.slug}}">
+                <img
+                    class="home-movie-image"
+                    width="200px"
+                    height="300px"
+                    src="/img/{{this.artwork}}"
+                    alt="{{this.name}} - {{this.director}}"
+                />
+            </a>
+        </div>
+    {{/each}}
+</div>

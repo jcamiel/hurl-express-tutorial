@@ -1,0 +1,48 @@
+{
+  "name": "movies-box",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "postbuild": "copyfiles --up 1 src/views/**/* src/views/* src/public/**/* src/public/* dist",
+    "fmt": "prettier src/ --write src/",
+    "fmtcheck": "prettier --check src/",
+    "lint": "eslint src/",
+    "test": "jest",
+    "prestart": "npm run build",
+    "start": "node dist/bin/www.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "handlebars-helper-range": "^1.1.1",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/csurf": "^1.11.2",
+    "@types/express": "^4.17.17",
+    "@types/express-session": "^1.17.7",
+    "@types/hbs": "^4.0.1",
+    "@types/jest": "^29.5.3",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^20.4.2",
+    "@types/on-headers": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.45.0",
+    "jest": "^29.6.1",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  }
+}

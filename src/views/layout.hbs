@@ -1,0 +1,73 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{title}}</title>
+        <link rel="icon" type="image/png" href="/img/favicon.png" />
+        <link rel="stylesheet" href="/css/style.css" />
+        {{{sections.script}}}
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="/">
+                    <div class="flex align-items-center">
+                        <img
+                            src="/img/filmstrip.svg"
+                            width="60px"
+                            height="60px"
+                        />
+                        <h1>Movies Box</h1>
+                    </div>
+                </a>
+            </div>
+            <div>
+                {{#if user}}
+                    <a class="home-nav-item" href="/my-movies">My Movies</a>
+                    <a class="home-nav-item" href="/logout">Logout</a>
+                {{else}}
+                    <a class="home-nav-item" href="/login">Login</a>
+                    <a class="home-nav-item" href="/signup">Sign up</a>
+                {{/if}}
+                <a class="home-nav-item" href="/search">Search</a>
+            </div>
+        </header>
+
+        {{#each flashMessages}}
+
+            {{#if (eq this.type "SUCCESS")}}
+                <div class="flex">
+                    <div
+                        class="flash background-success text-success"
+                    >{{this.text}}</div>
+                </div>
+            {{/if}}
+            {{#if (eq this.type "INFO")}}
+                <div class="flex">
+                    <div
+                        class="flash background-info text-info"
+                    >{{this.text}}</div>
+                </div>
+            {{/if}}
+            {{#if (eq this.type "WARNING")}}
+                <div class="flex">
+                    <div
+                        class="flash background-warning text-warning"
+                    >{{this.text}}</div>
+                </div>
+            {{/if}}
+            {{#if (eq this.type "ERROR")}}
+                <div class="flex">
+                    <div
+                        class="flash background-error text-error"
+                    >{{this.text}}</div>
+                </div>
+            {{/if}}
+
+        {{/each}}
+
+        <main>
+            {{{body}}}
+        </main>
+
+    </body>
+</html>
