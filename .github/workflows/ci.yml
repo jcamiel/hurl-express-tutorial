@@ -49,6 +49,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Docker image
         run: bin/docker-build.sh
+        env:
+          BUILDX_NO_DEFAULT_ATTESTATIONS: 1
   integration-test:
     runs-on: ubuntu-latest
     name: Integration tests
