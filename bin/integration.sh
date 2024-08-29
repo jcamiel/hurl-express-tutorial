@@ -7,7 +7,7 @@ set -eu
 
 wait_for_url () {
     echo "Testing $1..."
-    printf 'GET %s\nHTTP 200' "$1" | hurl --retry "$2" > /dev/null;
+    printf 'GET %s\nHTTP 200' "$1" | hurl --retry "$2" --retry-interval 1s > /dev/null;
     return 0
 }
 
