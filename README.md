@@ -5,7 +5,7 @@
 </picture>
 
 
-# Movies Box, an Hurl Tutorial
+# Movies Box, a Hurl Tutorial
 
 [![pipeline status](https://github.com/jcamiel/hurl-express-tutorial/workflows/CI/badge.svg)](https://github.com/jcamiel/hurl-express-tutorial/actions)
 
