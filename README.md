@@ -4,6 +4,8 @@
     <img src="docs/assets/img/movies-box-light.png" width="600" alt="Movies Box home page">
 </picture>
 
+[![pipeline status](https://github.com/jcamiel/hurl-express-tutorial/workflows/CI/badge.svg)](https://github.com/jcamiel/hurl-express-tutorial/actions)
+
 # Movies Box, an Hurl Tutorial
 
 "Movies Box" is a sample project to demonstrate the use of [Hurl].
