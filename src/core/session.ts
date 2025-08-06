@@ -16,7 +16,7 @@
  *
  */
 import type { Express } from "express";
-import session = require("express-session");
+import session from "express-session";
 import * as config from "../config";
 import type { User } from "../services/authent/user-repository";
 import type { FlashMessage } from "./flash-message";

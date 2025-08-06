@@ -16,7 +16,7 @@
  *
  */
 import type { Request, Response } from "express";
-import express = require("express");
+import express from "express";
 import crypto from "crypto";
 
 const router = express.Router();

@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import express = require("express");
+import express from"express";
 
 const router = express.Router();
 

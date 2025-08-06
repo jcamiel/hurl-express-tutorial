@@ -16,7 +16,7 @@
  *
  */
 import type { Request, Response } from "express";
-import express = require("express");
+import express from "express";
 import * as MovieService from "../../services/movie/movie-service";
 import { toMovieDto } from "./movie-dto";
 import * as FavoriteServices from "../../services/favorite/favorite-service";

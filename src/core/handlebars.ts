@@ -15,12 +15,12 @@
  * limitations under the License.
  *
  */
-import hbs = require("hbs");
+import hbs from "hbs";
 import type { Express } from "express";
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
-import handlebars_helper_range = require("handlebars-helper-range");
+import handlebars_helper_range from "handlebars-helper-range";
 
 function eq<T>(v1: T, v2: T): boolean {
     return v1 === v2;

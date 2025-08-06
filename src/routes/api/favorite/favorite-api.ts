@@ -16,7 +16,7 @@
  *
  */
 import type { Request, Response } from "express";
-import express = require("express");
+import express from "express";
 import authenticated from "../../../services/authent/middleware";
 import * as MovieService from "../../../services/movie/movie-service";
 import * as FavoriteService from "../../../services/favorite/favorite-service";
@@ -26,7 +26,6 @@ const router = express.Router();
 router.put("/", authenticated, (req: Request, res: Response) => {
     const selected = req.body.selected;
     const movieSlug = req.body.movie_id;
-    /* eslint-disable @typescript-eslint/no-non-null-assertion */
     const userId = req.session.user!.id; // request is authenticated so user is not null
 
     const movie = MovieService.findMovieBySlug(movieSlug);

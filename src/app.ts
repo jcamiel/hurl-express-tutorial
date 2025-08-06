@@ -16,11 +16,11 @@
  *
  */
 import type { NextFunction, Request, Response } from "express";
-import createError = require("http-errors");
-import express = require("express");
-import path = require("path");
-import cookieParser = require("cookie-parser");
-import logger = require("morgan");
+import createError from "http-errors";
+import express from "express";
+import path from "path";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
 import * as config from "./config";
 import { addSessionSupport } from "./core/session";
 import type { Error } from "./core/error";

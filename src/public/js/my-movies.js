@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import ButtonFavorite from "./button-favorite.js";
 
 const buttons = document.querySelectorAll(".button-favorite-container");

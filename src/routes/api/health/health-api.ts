@@ -16,7 +16,7 @@
  *
  */
 import type { Request, Response } from "express";
-import express = require("express");
+import express from "express";
 import * as HealthService from "../../../services/health/health-service";
 const router = express.Router();
 

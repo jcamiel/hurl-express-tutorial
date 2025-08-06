@@ -15,7 +15,7 @@
  * limitations under the License.
  *
  */
-import crypto = require("crypto");
+import crypto from "crypto";
 import type { User } from "./user-repository";
 import { userRepository } from "./user-repository";
 import * as config from "../../config";

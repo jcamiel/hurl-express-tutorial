@@ -108,6 +108,11 @@ header a {
         0 0 5px darkblue;
 }
 
+footer {
+    padding: 40px;
+    text-align: right;
+}
+
 h1 {
     font-size: 2.7rem;
     font-weight: bold;

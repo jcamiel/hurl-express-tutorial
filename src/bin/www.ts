@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-import http = require("http");
+import http from "http";
 import { app } from "../app";
 import type { Error } from "../core/error";
 

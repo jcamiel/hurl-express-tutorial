@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import type { User } from "../services/authent/user-repository";
-import express = require("express");
+import express from "express";
 import { body, validationResult } from "express-validator";
 import * as UserService from "../services/authent/user-service";
 import csrf from "../core/csrf";

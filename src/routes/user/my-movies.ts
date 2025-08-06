@@ -16,7 +16,7 @@
  *
  */
 import type { Request, Response } from "express";
-import express = require("express");
+import express from "express";
 import { query, validationResult } from "express-validator";
 import authenticated from "../../services/authent/middleware";
 import * as FavoriteService from "../../services/favorite/favorite-service";
@@ -33,7 +33,6 @@ router.get(
         if (validationResult(req).isEmpty() && req.query.page) {
             currentPage = req.query.page as unknown as number;
         }
-        /* eslint-disable @typescript-eslint/no-non-null-assertion */
         const userId = req.session.user!.id;
 
         const count = FavoriteService.favoritesCount(userId);
