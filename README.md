@@ -37,6 +37,11 @@ $ docker pull ghcr.io/jcamiel/hurl-express-tutorial:latest
 $ docker run --name movies --rm --detach --publish 3000:3000 ghcr.io/jcamiel/hurl-express-tutorial:latest
 ```
 
+## Running Integration Tests
+
+```shell
+$ hurl --variable host="http://localhost:3000" --test integration
+```
 
 [Hurl]: https://hurl.dev
 [Express]: https://expressjs.com

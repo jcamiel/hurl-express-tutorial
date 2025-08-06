@@ -17,6 +17,7 @@
  */
 import hbs = require("hbs");
 import type { Express } from "express";
+
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import handlebars_helper_range = require("handlebars-helper-range");

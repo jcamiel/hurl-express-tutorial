@@ -15,11 +15,11 @@
  * limitations under the License.
  *
  */
-import csurf = require("csurf");
+import csurf from '@dr.pogodin/csurf';
 
 /**
  * CSRF token middleware.
  */
-const csrf = csurf({ cookie: false });
+const csrf = csurf();
 
 export default csrf;
