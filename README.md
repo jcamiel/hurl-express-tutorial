@@ -4,9 +4,10 @@
     <img src="docs/assets/img/movies-box-light.png" width="600" alt="Movies Box home page">
 </picture>
 
-[![pipeline status](https://github.com/jcamiel/hurl-express-tutorial/workflows/CI/badge.svg)](https://github.com/jcamiel/hurl-express-tutorial/actions)
 
 # Movies Box, an Hurl Tutorial
+
+[![pipeline status](https://github.com/jcamiel/hurl-express-tutorial/workflows/CI/badge.svg)](https://github.com/jcamiel/hurl-express-tutorial/actions)
 
 "Movies Box" is a sample project to demonstrate the use of [Hurl].
 Hurl is a CLI tool to run and test HTTP requests. Hurl is used to write integration tests for HTML site, REST APIs, 
