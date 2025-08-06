@@ -15,7 +15,7 @@
  * limitations under the License.
  *
  */
-import csurf from '@dr.pogodin/csurf';
+import csurf from "@dr.pogodin/csurf";
 
 /**
  * CSRF token middleware.
