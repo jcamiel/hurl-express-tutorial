@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:3.22
 LABEL org.opencontainers.image.source=https://github.com/jcamiel/hurl-express-tutorial
 LABEL org.opencontainers.image.description="Movies Box, an Hurl Tutorial"
 LABEL org.opencontainers.image.licenses=Apache-2.0
