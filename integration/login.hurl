@@ -21,7 +21,7 @@ csrf_token: xpath "string(//input[@name='_csrf']/@value)"
 # Log in user, using the captured CSRF token. After
 # successful login, we should be redirected to the favorites page.
 POST {{host}}/login
-[FormParams]
+[Form]
 _csrf: {{csrf_token}}
 username: bob78
 password: 12345678
@@ -66,7 +66,7 @@ csrf_token: xpath "string(//input[@name='_csrf']/@value)"
 POST {{host}}/login
 [Options]
 location: true
-[FormParams]
+[Form]
 _csrf: {{csrf_token}}
 username: bob78
 password: bad-password
@@ -78,7 +78,7 @@ xpath "string(//div[contains(@class, 'text-error')])" == "Authentication failed,
 
 # Check that CSRF token is mandatory:
 POST {{host}}/login
-[FormParams]
+[Form]
 username: bob78
 password: 12345678
 HTTP 403

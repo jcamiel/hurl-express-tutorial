@@ -24,7 +24,7 @@ csrf_token: xpath "string(//input[@name='_csrf']/@value)"
 
 # Sign up!
 POST {{host}}/signup
-[FormParams]
+[Form]
 _csrf: {{csrf_token}}
 username: {{username}}
 name: Bob

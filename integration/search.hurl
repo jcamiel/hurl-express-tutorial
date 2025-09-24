@@ -3,7 +3,7 @@ HTTP 400
 
 
 GET {{host}}/api/search
-[QueryStringParams]
+[Query]
 q: 1982
 HTTP 200
 [Asserts]
@@ -14,7 +14,7 @@ jsonpath "$[0].release_date" == "1982-06-25"
 
 
 GET {{host}}/api/search
-[QueryStringParams]
+[Query]
 q: sean young
 HTTP 200
 [Asserts]
@@ -26,7 +26,7 @@ jsonpath "$[1].release_date" == "1984-12-03"
 
 # Verify that we don't have cache on search results
 GET {{host}}/api/search
-[QueryStringParams]
+[Query]
 q: sean young
 HTTP 200
 [Asserts]

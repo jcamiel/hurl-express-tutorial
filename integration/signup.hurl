@@ -17,7 +17,7 @@ xpath "//comment" count == 0     # Check that we don't leak comments
 POST {{host}}/signup
 [Options]
 location: true
-[FormParams]
+[Form]
 _csrf: {{csrf_token}}
 username: {{username}}
 name: Bob
@@ -40,7 +40,7 @@ csrf_token: xpath "string(//input[@name='_csrf']/@value)"
 POST {{host}}/signup
 [Options]
 location: true
-[FormParams]
+[Form]
 _csrf: {{csrf_token}}
 username: bo
 name: Bob
@@ -62,7 +62,7 @@ csrf_token: xpath "string(//input[@name='_csrf']/@value)"
 POST {{host}}/signup
 [Options]
 location: true
-[FormParams]
+[Form]
 _csrf: {{csrf_token}}
 username: bob33
 name: Bob
@@ -84,7 +84,7 @@ csrf_token: xpath "string(//input[@name='_csrf']/@value)"
 POST {{host}}/signup
 [Options]
 location: true
-[FormParams]
+[Form]
 _csrf: {{csrf_token}}
 username: SELECT * FROM users;
 name: Bob
@@ -98,7 +98,7 @@ xpath "string(//div[@class='form-errors'])" contains "Username must use a-z, A-Z
 
 # Test CSRF is mandatory:
 POST {{host}}/signup
-[FormParams]
+[Form]
 username: bob
 name: Bob
 email: bob78@example.net
