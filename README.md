@@ -30,6 +30,16 @@ Listening on port 3000
 
 You can create a new user, of play with an existing one like `user=fab`, `password=12345678`
 
+## Unit test && Format
+
+```shell
+$ npm test
+```
+
+```shell
+$ npm run fmtcheck
+$ npm run lint
+```
 
 ## Docker Image
 
