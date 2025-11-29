@@ -63,7 +63,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Hurl
         run: |
-          curl -LO https://github.com/Orange-OpenSource/hurl/releases/download/7.0.0/hurl_7.1.0_amd64.deb
+          curl -LO https://github.com/Orange-OpenSource/hurl/releases/download/7.1.0/hurl_7.1.0_amd64.deb
           sudo dpkg -i hurl_7.1.0_amd64.deb
           hurl --version
       - name: Integration test
