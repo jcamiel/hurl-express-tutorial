@@ -8,6 +8,7 @@
 # Movies Box, a Hurl Tutorial
 
 [![pipeline status](https://github.com/jcamiel/hurl-express-tutorial/workflows/CI/badge.svg)](https://github.com/jcamiel/hurl-express-tutorial/actions)
+[![integration report](https://img.shields.io/badge/integration-Hurl%E2%87%84-ff0288)](https://jcamiel.github.io/hurl-express-tutorial/)
 
 "Movies Box" is a sample project to demonstrate the use of [Hurl].
 Hurl is a CLI tool to run and test HTTP requests. Hurl is used to write integration tests for HTML site, REST APIs, 
