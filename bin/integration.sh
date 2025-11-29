@@ -18,7 +18,7 @@ echo "Starting app instance to be ready"
 wait_for_url "$1" 60
 
 echo "Running Hurl tests"
-hurl --variable host="$1" --test --color integration/*.hurl
+hurl --variable host="$1" --test --color --report-html build integration/*.hurl
 
 echo "Stopping app instance"
 docker stop movies
