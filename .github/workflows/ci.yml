@@ -58,6 +58,12 @@ jobs:
     permissions:
       contents: read
       packages: write
+      # Permissions to allow deployment on GitHub Pages
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -68,3 +74,13 @@ jobs:
           hurl --version
       - name: Integration test
         run: bin/integration.sh http://localhost:3000
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'build/'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
